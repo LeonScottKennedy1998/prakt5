@@ -14,27 +14,42 @@ public class Screwdriver {
         this.size = size;
     }
 
-    // Функция для получения id
+    // Геттер ID
     public int getId() {
         return id;
     }
 
-    // Функция для установления типа рукоятки
+    // Сеттер ID
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Сеттер HandleType
     public void setHandleType(String handleType) {
         this.handleType = handleType;
     }
 
-    // Функция для установления типа наконечника
+    // Геттер HandleType
+    public String getHandleType() {
+        return handleType;
+    }
+
+    // Сеттер TipType
     public void setTipType(String tipType) {
         this.tipType = tipType;
     }
 
-    // Функция для получения размера отвёртки
+    // Геттер TipType
+    public String getTipType() {
+        return tipType;
+    }
+
+    // Геттер Size
     public int getSize() {
         return size;
     }
 
-    // Функция для установления размера отвёртки
+    // Сеттер Size
     public void setSize(int size) {
         this.size = size;
     }

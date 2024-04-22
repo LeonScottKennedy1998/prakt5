@@ -9,10 +9,16 @@ public class ScrewdriverSet {
         this.setId = setId;
         this.screwdrivers = screwdrivers;
     }
-    // Функция для получения id
+    // Геттер ID
     public int getId() {
         return setId;
     }
+
+    // Сеттер ID
+    public void setId(int setId) {
+        this.setId = setId;
+    }
+
     // Вывод информации о наборе отвёрток
     public String toString() {
         StringBuilder sb = new StringBuilder();
