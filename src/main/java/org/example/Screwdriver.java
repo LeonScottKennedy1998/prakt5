@@ -39,9 +39,7 @@ public class Screwdriver {
         this.size = size;
     }
 
-
-    // Переопределение функции
-    @Override
+    // Вывод информации о отвёртке
     public String toString() {
         return "Отвертка [Идентификатор: " + id + ", Тип рукоятки: " + handleType +
                 ", Тип наконечника: " + tipType + ", Размер: " + size + "]";

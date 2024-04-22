@@ -13,8 +13,7 @@ public class ScrewdriverSet {
     public int getId() {
         return setId;
     }
-    // Переопределение функции
-    @Override
+    // Вывод информации о наборе отвёрток
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Набор отвёрток #").append(setId).append(": [");

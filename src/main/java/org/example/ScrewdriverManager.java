@@ -69,7 +69,8 @@ public class ScrewdriverManager {
     public void displayAllScrewdrivers() {
         if (screwdrivers.isEmpty()) {
             System.out.println("Список отверток пуст.");
-        } else {
+        }
+        else {
             System.out.println("Список всех отверток:");
             for (Screwdriver screwdriver : screwdrivers) {
                 System.out.println(screwdriver);
@@ -135,28 +136,32 @@ public class ScrewdriverManager {
         System.out.println("Введите количество отвёрток для добавления в набор:");
         int count = scanner.nextInt();
         scanner.nextLine();
-
-        List<Screwdriver> newSet = new ArrayList<>();
-
-        for (int i = 0; i < count; i++) {
-            System.out.println("Введите ID отвёртки для добавления в набор:");
-            int screwdriverId = scanner.nextInt();
-            scanner.nextLine();
-
-            Screwdriver screwdriver = findScrewdriverByIdSet(screwdriverId);
-            if (screwdriver != null) {
-                newSet.add(screwdriver);
-            } else {
-                System.out.println("Отвёртка с ID " + screwdriverId + " не найдена.");
-            }
+        if(count > screwdrivers.size()) {
+            System.out.println("Количество отвёрток меньше, чем вы хотите добавить в набор");
         }
-        ScrewdriverSet screwdriverSet = new ScrewdriverSet(setIdCounter++, newSet);
-        screwdriverSets.add(screwdriverSet);
+        else{
+            List<Screwdriver> newSet = new ArrayList<>();
+            for (int i = 0; i < count; i++) {
+                System.out.println("Введите ID отвёртки для добавления в набор:");
+                int screwdriverId = scanner.nextInt();
+                scanner.nextLine();
 
-        System.out.println("Создан набор отвёрток #" + (screwdriverSet.getId()));
-        System.out.println("Состав набора:");
-        for (Screwdriver screwdriver : newSet) {
-            System.out.println(screwdriver);
+                Screwdriver screwdriver = findScrewdriverByIdSet(screwdriverId);
+                if (screwdriver != null) {
+                    newSet.add(screwdriver);
+                } else {
+                    System.out.println("Отвёртка с ID " + screwdriverId + " не найдена.");
+                }
+            }
+
+            ScrewdriverSet screwdriverSet = new ScrewdriverSet(setIdCounter++, newSet);
+            screwdriverSets.add(screwdriverSet);
+
+            System.out.println("Создан набор отвёрток #" + (screwdriverSet.getId()));
+            System.out.println("Состав набора:");
+            for (Screwdriver screwdriver : newSet) {
+                System.out.println(screwdriver);
+            }
         }
     }
 
